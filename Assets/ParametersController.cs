@@ -36,6 +36,7 @@ public class Parameter
     public string ParameterName;
     public float Value;
     public float MaxValue;
+    public string Information;
 }
 
 public enum Parameters

@@ -12,12 +12,29 @@ public class ParameterDisplay : MonoBehaviour
     private TextMeshProUGUI parameterName;
     [SerializeField]
     private Image bar;
+    [SerializeField]
+    private Button infoButton;
 
     Parameter thisParameter;
 
     private void Start()
     {
         InitParameter();
+    }
+
+    private void OnEnable()
+    {
+        infoButton.onClick.AddListener(DisplayInfo);
+    }
+
+    private void OnDisable()
+    {
+        infoButton.onClick.RemoveListener(DisplayInfo);
+    }
+
+    private void DisplayInfo()
+    {
+        InfoWindow.Instance.ShowInfo(thisParameter.Information);
     }
 
     private void InitParameter()
