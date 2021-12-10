@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7005223200465763571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7005223200465763569}
+  - component: {fileID: 7005223200465763570}
+  m_Layer: 0
+  m_Name: ParametersController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7005223200465763569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7005223200465763571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 568.8413, y: 260.43488, z: 294.64764}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7005223200465763570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7005223200465763571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bee51b410db622468845e826490e8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - ParameterId: 0
+    ParameterName: "Czysto\u015B\u0107 powietrza"
+    Value: 1
+    MaxValue: 2
+    Information: info
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 0.1
+  - ParameterId: 1
+    ParameterName: CO2
+    Value: 1
+    MaxValue: 2
+    Information: info2
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 0.1
+  - ParameterId: 2
+    ParameterName: Temperatura
+    Value: 1
+    MaxValue: 2
+    Information: info3
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 0.1
+  - ParameterId: 3
+    ParameterName: "Wysoko\u015B\u0107 wud"
+    Value: 1
+    MaxValue: 2
+    Information: info4
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 0.1
+  - ParameterId: 4
+    ParameterName: "Produkcja \u015Bmieci"
+    Value: 1
+    MaxValue: 2
+    Information: info5
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 0.1
