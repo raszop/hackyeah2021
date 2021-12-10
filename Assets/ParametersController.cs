@@ -5,6 +5,8 @@ using System;
 
 public class ParametersController : MonoBehaviour
 {
+    public Action OnParametersChanged;
+
     [SerializeField]
     private List<Parameter> parameters;
 
@@ -22,11 +24,31 @@ public class ParametersController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Timer.Instance.OnHourPassed += DetoriorateOverTime;
+    }
+
+    private void OnDestroy()
+    {
+        Timer.Instance.OnHourPassed -= DetoriorateOverTime;
+    }
+
     public Parameter GetParameter(Parameters parameterId)
     {
         return parameters.Find(x => x.ParameterId == parameterId);
     }
 
+    private void DetoriorateOverTime()
+    {
+        parameters.ForEach(x => Detoriorate(x));
+        OnParametersChanged?.Invoke();
+    }
+
+    private void Detoriorate(Parameter p)
+    {
+        p.Value = Mathf.Clamp(p.Value + p.baseDetoriorationValue * p.baseDetoriorationMultiplier, p.Value, p.MaxValue);
+    }
 }
 
 [System.Serializable]
@@ -37,6 +59,9 @@ public class Parameter
     public float Value;
     public float MaxValue;
     public string Information;
+    [Header("detorioration")]
+    public float baseDetoriorationValue;
+    public float baseDetoriorationMultiplier;
 }
 
 public enum Parameters

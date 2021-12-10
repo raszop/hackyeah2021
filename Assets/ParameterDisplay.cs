@@ -20,6 +20,13 @@ public class ParameterDisplay : MonoBehaviour
     private void Start()
     {
         InitParameter();
+
+        ParametersController.Instance.OnParametersChanged += Repaint;
+    }
+
+    private void OnDestroy()
+    {
+        ParametersController.Instance.OnParametersChanged -= Repaint;
     }
 
     private void OnEnable()
