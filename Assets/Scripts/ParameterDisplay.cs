@@ -14,6 +14,8 @@ public class ParameterDisplay : MonoBehaviour
     private Image bar;
     [SerializeField]
     private Button infoButton;
+    [SerializeField]
+    private BarColorizer barColorizer;
 
     Parameter thisParameter;
 
@@ -41,7 +43,7 @@ public class ParameterDisplay : MonoBehaviour
 
     private void DisplayInfo()
     {
-        InfoWindow.Instance.ShowInfo(thisParameter.Information);
+        InfoWindow.Instance.ShowInfo(thisParameter.Information, thisParameter.ParameterName);
     }
 
     private void InitParameter()
@@ -55,5 +57,6 @@ public class ParameterDisplay : MonoBehaviour
     {
         parameterName.text = thisParameter.ParameterName;
         bar.fillAmount = thisParameter.Value / thisParameter.MaxValue;
+        barColorizer.AdjustLevel(bar.fillAmount);
     }
 }

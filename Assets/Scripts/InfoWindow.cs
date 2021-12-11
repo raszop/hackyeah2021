@@ -11,6 +11,8 @@ public class InfoWindow : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI text;
     [SerializeField]
+    private TextMeshProUGUI titleText;
+    [SerializeField]
     private Button closeWindowButton;
 
     private static InfoWindow instance;
@@ -43,8 +45,9 @@ public class InfoWindow : MonoBehaviour
         windowUi.SetActive(false);
     }
 
-    public void ShowInfo(string info)
+    public void ShowInfo(string info, string title)
     {
+        this.titleText.text = title;
         this.text.text = info;
         windowUi.SetActive(true);
     }
