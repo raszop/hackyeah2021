@@ -49,6 +49,12 @@ public class ParametersController : MonoBehaviour
     {
         p.Value = Mathf.Clamp(p.Value + p.baseDetoriorationValue * p.baseDetoriorationMultiplier, p.Value, p.MaxValue);
     }
+
+    public void ApplyMultiplierChange(UpgradeEffect effect)
+    {
+        Parameter p = parameters.Find(x => x.ParameterId == effect.Parameter);
+        p.baseDetoriorationMultiplier -= effect.MultiplierChange;
+    }
 }
 
 [System.Serializable]

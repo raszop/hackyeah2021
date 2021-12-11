@@ -45,7 +45,11 @@ public class UpgradesUiController : MonoBehaviour
 
     private void TryBuyingUpgrade()
     {
-        //todo
+        if(MoneyController.Instance.Money >= selectedUpgrade.UpgradePrice)
+        {
+            MoneyController.Instance.Money -= selectedUpgrade.UpgradePrice;
+            UnlockUpgrade(selectedUpgrade);
+        }
     }
 
     private void SelectUpgrade(string upgradeId)
@@ -53,6 +57,19 @@ public class UpgradesUiController : MonoBehaviour
         Upgrade upgrade = UpgradesController.Instance.GetUpgrade(upgradeId);
 
         selectedUpgradeDescripion.text = GenerateDescription(upgrade);
+    }
+
+    private void UnlockUpgrade(Upgrade upgrade)
+    {
+        ApplyUpgradeEffects(upgrade);
+    }
+
+    private void ApplyUpgradeEffects(Upgrade upgrade)
+    {
+        upgrade.UpgradeEffects.ForEach(x =>
+        {
+            ParametersController.Instance.ApplyMultiplierChange(x);
+        });
     }
 
     private string GenerateDescription(Upgrade upgrade)
