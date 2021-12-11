@@ -5,12 +5,21 @@ using UnityEngine;
 public class MoneyController : MonoBehaviour
 {
     [SerializeField]
+    private MoneyCounter moneyCounterUi;
+    [SerializeField]
     private int money;
 
     private static MoneyController instance;
     public static MoneyController Instance { get => instance; }
 
-    public int Money { get => money; set => money = value; }
+    public int Money { 
+        get => money;
+        set
+        {
+            money = value;
+            moneyCounterUi.Refresh(value);
+        }
+    }
 
     private void Awake()
     {
@@ -21,5 +30,10 @@ public class MoneyController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void Start()
+    {
+        moneyCounterUi.Refresh(money);
     }
 }
