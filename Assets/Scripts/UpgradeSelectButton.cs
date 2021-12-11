@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class UpgradeSelectButton : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class UpgradeSelectButton : MonoBehaviour
     private Button button;
     [SerializeField]
     private Image upgradeIcon;
+    [SerializeField]
+    private TextMeshProUGUI upgradeName;
 
     private string thisUpgrade;
 
@@ -30,7 +33,9 @@ public class UpgradeSelectButton : MonoBehaviour
         Upgrade upgrade = UpgradesController.Instance.GetUpgrade(skillName);
 
         this.thisUpgrade = skillName;
-        this.upgradeIcon.sprite = upgrade.UpgradeIcon;
+        this.upgradeName.text = skillName;
+        //this.upgradeIcon.sprite = upgrade.UpgradeIcon;
+
     }
 
     private void SelectSkill()

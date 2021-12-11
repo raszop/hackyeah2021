@@ -5,6 +5,8 @@ using UnityEngine;
 public class UpgradesController : MonoBehaviour
 {
     [SerializeField]
+    private UpgradesUiController upgradesUi;
+    [SerializeField]
     private List<Upgrade> upgrades;
 
     private static UpgradesController instance;
@@ -24,6 +26,11 @@ public class UpgradesController : MonoBehaviour
     public Upgrade GetUpgrade(string upgradeId)
     {
         return upgrades.Find(x => x.UpgradeName == upgradeId);
+    }
+
+    public void DisplayUpgrades(List<string> upgrades)
+    {
+        upgradesUi.DisplayUpgrades(upgrades);
     }
 }
 

@@ -15,12 +15,14 @@ public class UpgradesUiController : MonoBehaviour
 
     private Upgrade selectedUpgrade;
 
-    public void DisplayUpgrades(List<Upgrade> upgrades)
+    public void DisplayUpgrades(List<string> upgrades)
     {
         for(int i=0;i<availableUpgrades.Count;i++)
         {
-            availableUpgrades[i].SetSkill(upgrades[i].UpgradeName);
+            availableUpgrades[i].SetSkill(upgrades[i]);
         }
+
+        this.gameObject.SetActive(true);
     }
 
     private void OnEnable()
@@ -75,8 +77,7 @@ public class UpgradesUiController : MonoBehaviour
     private string GenerateDescription(Upgrade upgrade)
     {
         string s =
-            upgrade.UpgradeName + "\n" +
-            upgrade.UpgradeDescription + "\n\n" +
+            upgrade.UpgradeDescription + " Cena: " +
             upgrade.UpgradePrice;
 
         return s;
