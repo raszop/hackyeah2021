@@ -6,12 +6,6 @@ public class ExperienceController : MonoBehaviour
 {
     [SerializeField]
     private int difficultyCurve = 1;
-    [SerializeField]
-    private int currentLevel = 1;
-    [SerializeField]
-    private int currentExp = 0;
-    [SerializeField]
-    private int expToLevel = 100;
 
     [SerializeField]
     private ExperienceBarUi expBarUi;
@@ -37,14 +31,14 @@ public class ExperienceController : MonoBehaviour
 
     public void AddExp(int exp)
     {
-        currentExp += exp;
+        PlayerData.Instance.Experience += exp;
         CheckForLvlUp();
         RefreshExpBar();
     }
 
     private void CheckForLvlUp()
     {
-        if (currentExp >= expToLevel)
+        if (PlayerData.Instance.Experience >= PlayerData.Instance.ExpToLevel)
         {
             LevelUp();
             RefreshExpBar();
@@ -54,14 +48,14 @@ public class ExperienceController : MonoBehaviour
 
     public void LevelUp()
     {
-        currentLevel += 1;
+        PlayerData.Instance.Level += 1;
 
-        currentExp -= expToLevel;
-        expToLevel = (currentLevel + 1) * currentLevel * difficultyCurve;
+        PlayerData.Instance.Experience -= PlayerData.Instance.ExpToLevel;
+        PlayerData.Instance.ExpToLevel = (PlayerData.Instance.Level + 1) * PlayerData.Instance.Level * difficultyCurve;
     }
 
     private void RefreshExpBar()
     {
-        expBarUi.Repaint(currentLevel, currentExp, expToLevel);
+        expBarUi.Repaint(PlayerData.Instance.Level, PlayerData.Instance.Experience, PlayerData.Instance.ExpToLevel);
     }
 }

@@ -6,6 +6,11 @@ using System;
 
 public class GlobalDataTransmitter : MonoBehaviour
 {
+    [SerializeField]
+    private List<Parameter> initialParametersData;
+    [SerializeField]
+    private bool alwaysInitPlayerDataOnStart;
+
     private Minigames currentMinigame;
     private int currentMinigameScore;
     private bool isPlayingMinigame;
@@ -21,10 +26,12 @@ public class GlobalDataTransmitter : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
-        }else
+            HandlePlayerDataInit();
+        }
+        else
         {
             Destroy(gameObject);
         }
@@ -44,7 +51,7 @@ public class GlobalDataTransmitter : MonoBehaviour
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(isPlayingMinigame)
+        if (isPlayingMinigame)
         {
             //handle coming back from minigame
         }
@@ -70,6 +77,40 @@ public class GlobalDataTransmitter : MonoBehaviour
     private IEnumerator DelayedMenuLoadRoutine()
     {
         yield return new WaitForSecondsRealtime(menuLoadDelay);
+        Time.timeScale = 1.0F;
         SceneManager.LoadScene(GlobalVariables.mainScene);
+    }
+
+    private void HandlePlayerDataInit()
+    {
+        if (alwaysInitPlayerDataOnStart)
+        {
+            InitNewSaveFile();
+        }
+        else
+        {
+            if (PlayerDataSerializer.SaveExists())
+            {
+                PlayerDataSerializer.LoadFromFile();
+            }
+            else
+            {
+                InitNewSaveFile();
+            }
+        }
+    }
+
+    private void InitNewSaveFile()
+    {
+        PlayerData.Instance = new PlayerData();
+
+        PlayerData.Instance.Money = 200;
+        PlayerData.Instance.Level = 1;
+        PlayerData.Instance.Experience = 0;
+        PlayerData.Instance.ExpToLevel = 10;
+        PlayerData.Instance.CurrentDay = 1;
+        PlayerData.Instance.CurrentHour = 1;
+        PlayerData.Instance.UnlockedUpgrades = new List<string>();
+        PlayerData.Instance.ParametersData = initialParametersData;
     }
 }

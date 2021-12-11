@@ -13,6 +13,8 @@ public class ParametersController : MonoBehaviour
     private static ParametersController instance;
     public static ParametersController Instance { get => instance; }
 
+    public List<Parameter> Parameters { get => parameters; set => parameters = value; }
+
     private void Awake()
     {
         if(instance == null)
@@ -26,6 +28,9 @@ public class ParametersController : MonoBehaviour
 
     private void Start()
     {
+        this.parameters = PlayerData.Instance.ParametersData;
+        OnParametersChanged?.Invoke();
+
         Timer.Instance.OnHourPassed += DetoriorateOverTime;
     }
 
@@ -52,7 +57,7 @@ public class ParametersController : MonoBehaviour
 
     public void ApplyMultiplierChange(UpgradeEffect effect)
     {
-        Parameter p = parameters.Find(x => x.ParameterId == effect.Parameter);
+        Parameter p = parameters.Find(x => x.ParameterId == effect.Parameter);        
         p.baseDetoriorationMultiplier -= effect.MultiplierChange;
     }
 }
@@ -62,12 +67,12 @@ public class Parameter
 {
     public Parameters ParameterId;
     public string ParameterName;
-    public float Value;
-    public float MaxValue;
-    public string Information;
+    public float Value = 0;
+    public float MaxValue = 10;
+    public string Information = "info";
     [Header("detorioration")]
-    public float baseDetoriorationValue;
-    public float baseDetoriorationMultiplier;
+    public float baseDetoriorationValue = 1;
+    public float baseDetoriorationMultiplier = 0.1F;
 }
 
 public enum Parameters

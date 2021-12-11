@@ -6,16 +6,6 @@ using System;
 public class Timer : MonoBehaviour
 {
     [SerializeField]
-    private int startingDay;
-    [SerializeField]
-    private int startingHour;
-
-    [SerializeField]
-    private int currentHour;
-    [SerializeField]
-    private int currentDay;
-
-    [SerializeField]
     private float hourTime = 3F;
 
     public Action OnHourPassed;
@@ -23,8 +13,8 @@ public class Timer : MonoBehaviour
     private static Timer instance;
     public static Timer Instance { get => instance; }
 
-    public int CurrentHour { get => currentHour; }
-    public int CurrentDay { get => currentDay; }
+    public int CurrentHour { get => PlayerData.Instance.CurrentHour; }
+    public int CurrentDay { get => PlayerData.Instance.CurrentDay; }
 
     private float lastHourPassed;
 
@@ -41,24 +31,28 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        currentHour = startingHour;
-        currentDay = startingDay;
+        //PassHour();
     }
 
     private void UpdateTime()
     {
-        currentHour += 1;
-        currentDay = currentHour > 23 ? currentDay += 1 : currentDay;
-        currentHour = currentHour > 23 ? 0 : currentHour;
+        PlayerData.Instance.CurrentHour += 1;
+        PlayerData.Instance.CurrentDay = PlayerData.Instance.CurrentHour > 23 ? PlayerData.Instance.CurrentDay += 1 : PlayerData.Instance.CurrentDay;
+        PlayerData.Instance.CurrentHour = PlayerData.Instance.CurrentHour > 23 ? 0 : PlayerData.Instance.CurrentHour;
     }
 
     private void Update()
     {
         if(Time.time > lastHourPassed)
         {
-            lastHourPassed = Time.time + hourTime;
-            UpdateTime();
-            OnHourPassed?.Invoke();
+            PassHour();
         }
+    }
+
+    private void PassHour()
+    {
+        lastHourPassed = Time.time + hourTime;
+        UpdateTime();
+        OnHourPassed?.Invoke();
     }
 }

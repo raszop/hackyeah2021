@@ -6,17 +6,15 @@ public class MoneyController : MonoBehaviour
 {
     [SerializeField]
     private MoneyCounter moneyCounterUi;
-    [SerializeField]
-    private int money;
 
     private static MoneyController instance;
     public static MoneyController Instance { get => instance; }
 
     public int Money { 
-        get => money;
+        get => PlayerData.Instance.Money;
         set
         {
-            money = value;
+            PlayerData.Instance.Money = value;
             moneyCounterUi.Refresh(value);
         }
     }
@@ -34,6 +32,6 @@ public class MoneyController : MonoBehaviour
 
     private void Start()
     {
-        moneyCounterUi.Refresh(money);
+        moneyCounterUi.Refresh(PlayerData.Instance.Money);
     }
 }

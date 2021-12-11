@@ -21,8 +21,6 @@ public class ParameterDisplay : MonoBehaviour
 
     private void Start()
     {
-        InitParameter();
-
         ParametersController.Instance.OnParametersChanged += Repaint;
     }
 
@@ -46,15 +44,13 @@ public class ParameterDisplay : MonoBehaviour
         InfoWindow.Instance.ShowInfo(thisParameter.Information, thisParameter.ParameterName);
     }
 
-    private void InitParameter()
-    {
-        thisParameter = ParametersController.Instance.GetParameter(parameterId);
-
-        Repaint();
-    }
-
     private void Repaint()
     {
+        if(thisParameter == null)
+        {
+            thisParameter = ParametersController.Instance.GetParameter(parameterId);
+        }
+
         parameterName.text = thisParameter.ParameterName;
         bar.fillAmount = thisParameter.Value / thisParameter.MaxValue;
         barColorizer.AdjustLevel(bar.fillAmount);

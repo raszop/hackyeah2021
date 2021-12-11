@@ -777,6 +777,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: {fileID: 801465389}
+--- !u!224 &754275719 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+  m_PrefabInstance: {fileID: 1826444582}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &801465387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1095,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ecab40ba0b74c688d3f255362c2c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialParametersData:
+  - ParameterId: 0
+    ParameterName: Zanieczyszczenie Powietrza
+    Value: 0
+    MaxValue: 100
+    Information: 
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 1
+  - ParameterId: 1
+    ParameterName: Gazy cieplarniane
+    Value: 0
+    MaxValue: 100
+    Information: 
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 1
+  - ParameterId: 2
+    ParameterName: Temperatura
+    Value: 0
+    MaxValue: 100
+    Information: 
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 1
+  - ParameterId: 3
+    ParameterName: "Poziom w\xF3d"
+    Value: 0
+    MaxValue: 100
+    Information: 
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 1
+  - ParameterId: 4
+    ParameterName: "Produkcja \u015Bmieci"
+    Value: 0
+    MaxValue: 100
+    Information: 
+    baseDetoriorationValue: 1
+    baseDetoriorationMultiplier: 1
+  alwaysInitPlayerDataOnStart: 1
 --- !u!4 &1037204443
 Transform:
   m_ObjectHideFlags: 0
@@ -1443,6 +1485,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 844656041}
+  - {fileID: 754275719}
   m_Father: {fileID: 290901519}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1886,6 +1929,107 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1826444582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1373065161}
+    m_Modifications:
+    - target: {fileID: 2471822047412856477, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_Name
+      value: Levelbutton (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631400872361726986, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: minigameId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 67
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -110.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 75.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719127833737829165, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d97d3f3931ac41e8aa8e90957b6ed74, type: 3}
 --- !u!1 &1892574248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,7 +2066,7 @@ MonoBehaviour:
     MinigameName: Sea Trasher
     MinigameDescription: a minigame about sea trash
   - MinigameId: 1
-    MinigameScene: Consumptionism
+    MinigameScene: Consumption
     MinigameName: Consumptionism
     MinigameDescription: a minigame about consumptionism
 --- !u!4 &1892574250
@@ -2579,6 +2723,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2497299345781295372, guid: 3c5f475c68e83314a9037eff06647112, type: 3}
+      propertyPath: upgrades.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2497299345781295373, guid: 3c5f475c68e83314a9037eff06647112, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2909,6 +3057,170 @@ PrefabInstance:
     - target: {fileID: 7005223200465763569, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[0].Information
+      value: info5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[0].ParameterId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[1].Information
+      value: info5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[1].ParameterId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[2].Information
+      value: info5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[2].ParameterId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[3].Information
+      value: info5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[3].ParameterId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[0].ParameterName
+      value: "Produkcja \u015Bmieci"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[1].ParameterName
+      value: "Produkcja \u015Bmieci"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[2].ParameterName
+      value: "Produkcja \u015Bmieci"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: parameters.Array.data[3].ParameterName
+      value: "Produkcja \u015Bmieci"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[0].MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[1].MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[2].MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[3].MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[4].MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[1].Information
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[1].ParameterId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[2].Information
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[2].ParameterId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[3].Information
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[3].ParameterId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[4].ParameterId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[0].ParameterName
+      value: Zanieczyszczenie powietrza
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[1].ParameterName
+      value: Gazy cieplarniane
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[2].ParameterName
+      value: Temperatura
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[3].ParameterName
+      value: "Poziom w\xF3d"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[4].ParameterName
+      value: "Produkcja odpad\xF3w"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[0].baseDetoriorationValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[1].baseDetoriorationValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[2].baseDetoriorationValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[3].baseDetoriorationValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[4].baseDetoriorationValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[0].baseDetoriorationMultiplier
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[1].baseDetoriorationMultiplier
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[2].baseDetoriorationMultiplier
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[3].baseDetoriorationMultiplier
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005223200465763570, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
+      propertyPath: initialparametersData.Array.data[4].baseDetoriorationMultiplier
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7005223200465763571, guid: 1d88156ed9a6fd64fad1b5fcc8dc771c, type: 3}
       propertyPath: m_Name

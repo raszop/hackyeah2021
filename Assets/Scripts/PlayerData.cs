@@ -20,15 +20,7 @@ public class PlayerData
     public int CurrentHour;
 
     public List<string> UnlockedUpgrades;
-    public List<ParameterSaveData> ParametersData;
-}
-
-[System.Serializable]
-public class ParameterSaveData
-{
-    public Parameters ParameterId;
-    public float ParameterValue;
-    public float DetoriorationValue;
+    public List<Parameter> ParametersData;
 }
 
 [System.Serializable]
@@ -56,6 +48,7 @@ public class PlayerDataSerializer
         }
 
         PlayerDataSerializer localDataCopy = new PlayerDataSerializer();
+
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream fs = File.Create(saveFilePath + saveFileName);
         formatter.Serialize(fs, localDataCopy);
