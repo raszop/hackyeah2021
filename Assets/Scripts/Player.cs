@@ -37,21 +37,18 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("trash"))
         {
-            Debug.Log("good touched");
             Destroy(collision.gameObject);
             score.Plus();
         }
 
         if (collision.gameObject.CompareTag("animal"))
         {
-            Debug.Log("bad touched");
             Destroy(collision.gameObject);
             score.Minus(3);
         }
 
         if (collision.gameObject.CompareTag("obstacle"))
         {
-            Debug.Log("end touched");
             score.EndGame();
         }
     }

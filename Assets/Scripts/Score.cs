@@ -7,8 +7,22 @@ public class Score : MonoBehaviour
 {
     int plus;
     int minus;
-    [SerializeField] [Range(1, 5)] public int maxMinus;
+    [SerializeField] [Range(3, 7)] public int maxMinus;
+    [SerializeField] private GameObject minusDisplay;
+    [SerializeField] private GameObject plusDisplay;
+    [SerializeField] private GameObject EndGameBanner;
 
+    private void Start()
+    {
+        SetMinusDisplay();
+        SetPlusDisplay();
+        EndGameBanner.SetActive(false);
+    }
+
+    private void SetPlusDisplay()
+    {
+        plusDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = plus.ToString();
+    }
 
     private void CheckMaxMinus()
     {
@@ -27,24 +41,34 @@ public class Score : MonoBehaviour
     public void Minus()
     {
         minus++;
+        SetMinusDisplay();
         CheckMaxMinus();
     }
 
     public void Minus(int value)
     {
-        minus -= value;
+        minus += value;
+        SetMinusDisplay();
         CheckMaxMinus();
+    }
+
+    private void SetMinusDisplay()
+    {
+        var minusDisplayText = $"{minus.ToString()}/{maxMinus}";
+        minusDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = minusDisplayText;
     }
 
     public void Plus()
     {
         plus++;
+        SetPlusDisplay();
     }
 
     public void EndGame()
     {
         Debug.Log($"Game End, overall score: {GetOverallScore()}");
         Time.timeScale = 0.0f;
+        EndGameBanner.SetActive(true);
         throw new System.NotImplementedException();
     }
 }

@@ -19,7 +19,7 @@ public class Person : MonoBehaviour
     void Start()
     {
         allGoals = GetAllGoals();
-        var scoreGM = GameObject.Find("Score");
+        var scoreGM = GameObject.Find("GameController");
         score = scoreGM.GetComponent<Score>();
     }
 
@@ -42,6 +42,8 @@ public class Person : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 rayPoint = ray.GetPoint(distance);
+            rayPoint = new Vector3(rayPoint.x, transform.position.y, rayPoint.z);
+
             transform.position = rayPoint;
         }
         else
