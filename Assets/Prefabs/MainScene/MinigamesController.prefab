@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a85449b3d7148daa7d1df87aa6b330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCompletedScreen: {fileID: 0}
   minigameLaunchWindow: {fileID: 0}
   minigames:
   - MinigameId: 0
@@ -53,3 +54,14 @@ MonoBehaviour:
     MinigameScene: Consumption
     MinigameName: Consumptionism
     MinigameDescription: a minigame about consumptionism
+  minigameRewards:
+  - MinigameId: 0
+    Rewards:
+    - Parameter: 0
+      Value: 100
+    - Parameter: 1
+      Value: 100
+  - MinigameId: 1
+    Rewards:
+    - Parameter: 4
+      Value: 50

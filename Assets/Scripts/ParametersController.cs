@@ -60,6 +60,17 @@ public class ParametersController : MonoBehaviour
         Parameter p = parameters.Find(x => x.ParameterId == effect.Parameter);        
         p.baseDetoriorationMultiplier -= effect.MultiplierChange;
     }
+
+    public void ApplyParameterChange(Parameters parameter, float value)
+    {
+        Parameter p = parameters.Find(x => x.ParameterId == parameter);
+        p.Value = Mathf.Clamp(p.Value - value, 0, p.MaxValue);
+    }
+
+    public string GetParameterName(Parameters parameterId)
+    {
+        return parameters.Find(x => x.ParameterId == parameterId).ParameterName;
+    }
 }
 
 [System.Serializable]
