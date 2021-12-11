@@ -24,6 +24,8 @@ public class UpgradesUiController : MonoBehaviour
             availableUpgrades[i].SetSkill(upgrades[i]);
         }
 
+        SelectUpgrade(upgrades[0]);
+
         this.gameObject.SetActive(true);
     }
 
@@ -51,6 +53,7 @@ public class UpgradesUiController : MonoBehaviour
 
     private void TryBuyingUpgrade()
     {
+        Debug.Log(selectedUpgrade.UpgradePrice);
         if(MoneyController.Instance.Money >= selectedUpgrade.UpgradePrice)
         {
             MoneyController.Instance.Money -= selectedUpgrade.UpgradePrice;
@@ -62,11 +65,17 @@ public class UpgradesUiController : MonoBehaviour
     {
         Upgrade upgrade = UpgradesController.Instance.GetUpgrade(upgradeId);
 
+        selectedUpgrade = upgrade;
+
         selectedUpgradeDescripion.text = GenerateDescription(upgrade);
     }
 
     private void UnlockUpgrade(Upgrade upgrade)
     {
+        PlayerData.Instance.UnlockedUpgrades.Add(upgrade.UpgradeName);
+
+        EnvironmentChanger.Instance.Refresh();
+
         ApplyUpgradeEffects(upgrade);
     }
 
