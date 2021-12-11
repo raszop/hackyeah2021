@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject person;
+    [SerializeField] private GameObject person;
 
-    [SerializeField]
-    private float spawnInterval = 5f;
+    [SerializeField] private float spawnInterval = 5f;
     private float timeCounter;
-    [SerializeField][Range(150,200)]
-    float radius = 350f;
+    [SerializeField] [Range(150, 200)] float radius = 350f;
 
     void Start()
     {
-        SpawnOnCircle(9);
+        SpawnOnCircle(4); // set this to change difficulty
     }
 
     void Update()
@@ -33,13 +30,13 @@ public class Spawner : MonoBehaviour
             spawnInterval -= Time.deltaTime * 0.04f;
     }
 
-    void SpawnOnCircle(int peopleToSpawn = 5, int difficulty=1)
+    void SpawnOnCircle(int peopleToSpawn = 5, int difficulty = 1)
     {
-        for (int i = 0; i < peopleToSpawn ; i++)
+        for (int i = 0; i < peopleToSpawn; i++)
         {
-            var offset = Random.Range(30, 75);
-            float angle = (i * Mathf.PI*2f / peopleToSpawn) + offset;
-            Vector3 newPos = new Vector3(Mathf.Cos(angle)*radius, 6, Mathf.Sin(angle)*radius);
+            var offset = Random.Range(50, 75);
+            float angle = (i * Mathf.PI * 2f / peopleToSpawn) + offset;
+            Vector3 newPos = new Vector3(Mathf.Cos(angle) * radius + (offset / 10), 6, Mathf.Sin(angle) * radius);
             Instantiate(person, newPos, Quaternion.identity);
         }
     }
@@ -47,6 +44,5 @@ public class Spawner : MonoBehaviour
     void SpawnPerson(Vector3 newPos)
     {
         Instantiate(person, newPos, Quaternion.identity);
-
     }
 }
