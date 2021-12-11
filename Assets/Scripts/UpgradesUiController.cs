@@ -12,6 +12,8 @@ public class UpgradesUiController : MonoBehaviour
     private Button buyUpgradeButton;
     [SerializeField]
     private TextMeshProUGUI selectedUpgradeDescripion;
+    [SerializeField]
+    private Button closeWindowButton;
 
     private Upgrade selectedUpgrade;
 
@@ -33,6 +35,7 @@ public class UpgradesUiController : MonoBehaviour
         }
 
         buyUpgradeButton.onClick.AddListener(TryBuyingUpgrade);
+        closeWindowButton.onClick.AddListener(CloseWindow);
     }
 
     private void OnDisable()
@@ -43,6 +46,7 @@ public class UpgradesUiController : MonoBehaviour
         }
 
         buyUpgradeButton.onClick.RemoveListener(TryBuyingUpgrade);
+        closeWindowButton.onClick.RemoveListener(CloseWindow);
     }
 
     private void TryBuyingUpgrade()
@@ -81,5 +85,10 @@ public class UpgradesUiController : MonoBehaviour
             upgrade.UpgradePrice;
 
         return s;
+    }
+
+    private void CloseWindow()
+    {
+        gameObject.SetActive(false);
     }
 }

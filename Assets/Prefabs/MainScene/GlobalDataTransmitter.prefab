@@ -45,38 +45,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialParametersData:
   - ParameterId: 0
-    ParameterName: Zanieczyszczenie Powietrza
+    ParameterName: "Czysto\u015B\u0107 powietrza"
     Value: 0
     MaxValue: 100
-    Information: 
+    Information: "jako\u015B\u0107 powietrza ma bezpo\u015Bredni wp\u0142yw na zmiany
+      klimatu i zdrowia cz\u0142owieka. Im wi\u0119ksze zanieczyszczenie powietrza
+      - tym gorzej dla Twoich p\u0142uc i dla \u015Brodowiska, w kt\xF3rym \u017Cyjesz. "
     baseDetoriorationValue: 1
     baseDetoriorationMultiplier: 1
   - ParameterId: 1
     ParameterName: Gazy cieplarniane
     Value: 0
     MaxValue: 100
-    Information: 
+    Information: "Globalne ocieplenie niekorzystanie wp\u0142ywa na mieszka\u0144c\xF3w
+      wielu region\xF3w, kt\xF3rzy musz\u0105 migrowa\u0107 w inne miejsca by prze\u017Cy\u0107. "
     baseDetoriorationValue: 1
     baseDetoriorationMultiplier: 1
   - ParameterId: 2
     ParameterName: Temperatura
     Value: 0
     MaxValue: 100
-    Information: 
+    Information: "Globalne ocieplenie niekorzystanie wp\u0142ywa na mieszka\u0144c\xF3w
+      wielu region\xF3w, kt\xF3rzy musz\u0105 migrowa\u0107 w inne miejsca by prze\u017Cy\u0107. 
+      \\nWzrost temperatury niekorzystnie wp\u0142ywa na wszystkie organizmy \u017Cywe
+      oraz na warunki pogodowe , kt\xF3re czasem przeobra\u017Caj\u0105 si\u0119
+      w kataklizmy takie jak susze, po\u017Cary, gwa\u0142towne ulewy i powodzie."
     baseDetoriorationValue: 1
     baseDetoriorationMultiplier: 1
   - ParameterId: 3
     ParameterName: "Poziom w\xF3d"
     Value: 0
     MaxValue: 100
-    Information: 
+    Information: "Im cieplejsza temperatura wody i powietrza, tym topnienie lodowc\xF3w
+      - naszych naturalnych sch\u0142adzaczy - jest szybsze, co zwi\u0119ksza poziom
+      w\xF3d w morzach i oceanach."
     baseDetoriorationValue: 1
     baseDetoriorationMultiplier: 1
   - ParameterId: 4
     ParameterName: "Produkcja \u015Bmieci"
     Value: 0
     MaxValue: 100
-    Information: 
+    Information: "\u015Amieci powstaj\u0105 z powodu nadmiernej konsumpcji. Im wi\u0119cej
+      kupujemy, tym wi\u0119cej \u015Bmieci tworzymy."
     baseDetoriorationValue: 1
     baseDetoriorationMultiplier: 1
   alwaysInitPlayerDataOnStart: 1

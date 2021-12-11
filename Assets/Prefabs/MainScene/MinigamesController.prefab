@@ -48,19 +48,25 @@ MonoBehaviour:
   minigames:
   - MinigameId: 0
     MinigameScene: SeaTrash
-    MinigameName: Sea Trasher
-    MinigameDescription: a minigame about sea trash
+    MinigameName: Kombajn oceaniczny
+    MinigameDescription: "Gra kombajn oceaniczny  Odblokuj upgrady dla Twojej wyspy! 
+      Wy\u0142\xF3w z oceanu \u015Bmieci i uratuj jego mieszka\u0144c\xF3w.   Zosta\u0144
+      ekologicznym kapitanem oceanicznego kombajnu.  Wy\u0142\xF3w \u015Bmieci przemieszczaj\u0105c
+      si\u0119 w lewo lub prawo.  Omijaj naturalne przeszkody.  "
   - MinigameId: 1
     MinigameScene: Consumption
-    MinigameName: Consumptionism
-    MinigameDescription: a minigame about consumptionism
+    MinigameName: "Gor\u0105czka zakup\xF3w!"
+    MinigameDescription: "Powstrzymaj ludzi, kt\xF3rzy ci\u0105gle chc\u0105 kupowa\u0107
+      nowe, niepotrzebne im rzeczy. Przeci\u0105gnij ich na dobr\u0105 stron\u0119
+      mocy i pom\xF3\u017C w wyborze lokalnych produkt\xF3w, kt\xF3ra maj\u0105 mniejszy
+      \u015Blad w\u0119glowy. "
   minigameRewards:
   - MinigameId: 0
     Rewards:
     - Parameter: 0
-      Value: 100
+      Value: 20
     - Parameter: 1
-      Value: 100
+      Value: 20
   - MinigameId: 1
     Rewards:
     - Parameter: 4

@@ -43,4 +43,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550643563339e0945958355d2f35f6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrades: []
+  upgradesUi: {fileID: 0}
+  upgrades:
+  - UpgradeName: Recykling
+    UpgradeIcon: {fileID: 0}
+    UpgradeDescription: "Maszyna do recyklingu, w kt\xF3rej przerabiasz \u015Bmieci
+      na u\u017Cyteczne przedmioty."
+    UpgradePrice: 200
+    UpgradeEffects:
+    - Parameter: 1
+      MultiplierChange: 0.3
+    - Parameter: 4
+      MultiplierChange: 0.4
+  - UpgradeName: Kompostownik
+    UpgradeIcon: {fileID: 0}
+    UpgradeDescription: "Redukujesz ilo\u015B\u0107 \u015Bmieci BIO, na dodatek otrzymujesz
+      ekologiczny naw\xF3z!"
+    UpgradePrice: 250
+    UpgradeEffects:
+    - Parameter: 1
+      MultiplierChange: 0.2
+    - Parameter: 4
+      MultiplierChange: 0.2
+    - Parameter: 0
+      MultiplierChange: 0.2
+  - UpgradeName: Elektrownia wodna
+    UpgradeIcon: {fileID: 0}
+    UpgradeDescription: "elektrownia wodna wytwarza energi\u0119 dzi\u0119ki wodzie,
+      kt\xF3ra nap\u0119dza generator. "
+    UpgradePrice: 300
+    UpgradeEffects:
+    - Parameter: 3
+      MultiplierChange: 0.3
+    - Parameter: 1
+      MultiplierChange: 0.3
+  - UpgradeName: "Bia\u0142y \u017Cagiel"
+    UpgradeIcon: {fileID: 0}
+    UpgradeDescription: "otrzymasz \u017Cagiel, kt\xF3ry pasuje do ka\u017Cdego statku,
+      dzi\u0119ki czemu b\u0119dziesz podr\xF3\u017Cowa\u0142 bez u\u017Cycia paliwa"
+    UpgradePrice: 300
+    UpgradeEffects:
+    - Parameter: 0
+      MultiplierChange: 0.3
+    - Parameter: 1
+      MultiplierChange: 0.3
