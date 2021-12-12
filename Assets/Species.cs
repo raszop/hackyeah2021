@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
-public class Color : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Species : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private GameController gameController;
 
