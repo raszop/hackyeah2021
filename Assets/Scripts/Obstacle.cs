@@ -36,8 +36,9 @@ public class Obstacle : MonoBehaviour
     {
         if (transform.localPosition.z < -10)
         {
+            if (CompareTag("trash"))
+                score.Minus();
             Destroy(gameObject);
-            score.Minus();
         }
     }
 }

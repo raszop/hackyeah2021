@@ -66,10 +66,9 @@ public class Score : MonoBehaviour
 
     public void EndGame()
     {
+        EndGameBanner.SetActive(true);
         Debug.Log($"Game End, overall score: {GetOverallScore()}");
         Time.timeScale = 0.0f;
-        EndGameBanner.SetActive(true);
-
         GlobalDataTransmitter.Instance.EndAndExitMinigame((int)GetOverallScore());
         //throw new System.NotImplementedException();
     }
